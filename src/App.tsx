@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { AuthProvider } from './contexts/AuthContext';
 import { DrawerProvider } from './contexts/DrawerContext';
@@ -18,7 +18,7 @@ function AppRoutes() {
   const { isOpen } = useDrawer();
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route
@@ -167,7 +167,7 @@ function AppRoutes() {
         />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
